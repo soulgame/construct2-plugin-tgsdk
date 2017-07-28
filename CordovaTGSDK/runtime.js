@@ -68,58 +68,58 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	AppID=this.properties[0];
 
 	if (typeof window['tgsdk'] == 'undefined') {return;} else {
-		window['tgsdk'].setDebugModel(debug);
-		window['tgsdk'].initialize(AppID);
+		window['tgsdk']['setDebugModel'](debug);
+		window['tgsdk']['initialize'](AppID);
 	}
 
 	// set events
 
 
-	window['tgsdk'].onPreloadSuccess = function(ret) {
+	window['tgsdk']['onPreloadSuccess'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadSuccess, self);
 	};
 
-	window['tgsdk'].onPreloadFailed = function(ret) {
+	window['tgsdk']['onPreloadFailed'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadFailed, self);
 	};
 
-	window['tgsdk'].onCPADLoaded = function(ret) {
+	window['tgsdk']['onCPADLoaded'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onCPADLoaded, self);
 	};
 
-	window['tgsdk'].onVideoADLoaded = function(ret) {
+	window['tgsdk']['onVideoADLoaded'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onVideoADLoaded, self);
 	};
 
-	window['tgsdk'].onADAwardSuccess = function(ret) {
+	window['tgsdk']['onADAwardSuccess'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardSuccess, self);
 	};
 
-	window['tgsdk'].onADAwardFailed = function(ret) {
+	window['tgsdk']['onADAwardFailed'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardFailed, self);
 	};
 
-	window['tgsdk'].onShowSuccess = function(ret) {
+	window['tgsdk']['onShowSuccess'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowSuccess, self);
 	};
 
-	window['tgsdk'].onShowFailed = function(ret) {
+	window['tgsdk']['onShowFailed'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowFailed, self);
 	};
 
-	window['tgsdk'].onADComplete = function(ret) {
+	window['tgsdk']['onADComplete'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADComplete, self);
 	};
 
-	window['tgsdk'].onADClick = function(ret) {
+	window['tgsdk']['onADClick'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClick, self);
 	};
 
-	window['tgsdk'].onADClose = function(ret) {
+	window['tgsdk']['onADClose'] = function(ret) {
 	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClose, self);
 	};
 
-	window['tgsdk'].preload();
+	window['tgsdk']['preload']();
 
 	};
 
@@ -210,21 +210,21 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	Acts.prototype.initialize = function ()
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].initialize(AppID);
+		  window['tgsdk']['initialize'](AppID);
 	  }
 	}
 
 	Acts.prototype.preload = function ()
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].preload();
+		  window['tgsdk']['preload']();
 		}
 	}
 
 	Acts.prototype.couldShowAd = function (SceneID)
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].couldShowAd(
+		  window['tgsdk']['couldShowAd'](
           SceneID,
           function(){
             self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onCouldShowTrue, self);
@@ -239,14 +239,14 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	Acts.prototype.showTestView = function (SceneID)
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].showTestView(SceneID);
+		  window['tgsdk']['showTestView'](SceneID);
 		}
 	}
 
 	Acts.prototype.showAd = function (SceneID)
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].showAd(SceneID);
+		  window['tgsdk']['showAd'](SceneID);
 		}
 	}
 
