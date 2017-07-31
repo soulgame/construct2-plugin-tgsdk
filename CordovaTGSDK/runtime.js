@@ -63,47 +63,105 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	self = this;
 	debug = false;
 
-	if (this.properties[1]=='true') {test=true;}
+	if (this.properties[1]=='true' || this.properties[1]==true) {debug=true;}
 
 	AppID=this.properties[0];
 
 	if (typeof window['tgsdk'] == 'undefined') {return;} else {
+        if (!!console && !!console.log) {
+            console.log('Construct2 CordovaTGSDK setDebugModel('+debug+'('+this.properties[1]+')) && initialize('+AppID+')');
+        }
 		window['tgsdk']['setDebugModel'](debug);
 		window['tgsdk']['initialize'](AppID);
 	}
 
 	// set events
-    document.addEventListener('onPreloadSuccess', function () {
+    document.addEventListener('onPreloadSuccess', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onPreloadSuccess : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadSuccess, self);
 	});
-	document.addEventListener('onPreloadFailed', function () {
+	document.addEventListener('onPreloadFailed', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onPreloadFailed : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadFailed, self);
 	});
-	document.addEventListener('onCPADLoaded', function () {
+	document.addEventListener('onCPADLoaded', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onCPADLoaded : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onCPADLoaded, self);
 	});
-	document.addEventListener('onVideoADLoaded', function () {
+	document.addEventListener('onVideoADLoaded', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onVideoADLoaded : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onVideoADLoaded, self);
 	});
-	document.addEventListener('onADAwardSuccess', function () {
+	document.addEventListener('onADAwardSuccess', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onADAwardSuccess : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardSuccess, self);
 	});
-	document.addEventListener('onADAwardFailed', function () {
+	document.addEventListener('onADAwardFailed', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onADAwardFailed : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardFailed, self);
 	});
-	document.addEventListener('onShowSuccess', function () {
+	document.addEventListener('onShowSuccess', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onShowSuccess : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowSuccess, self);
 	});
-	document.addEventListener('onShowFailed', function () {
+	document.addEventListener('onShowFailed', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onShowFailed : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowFailed, self);
 	});
-	document.addEventListener('onADComplete', function () {
+	document.addEventListener('onADComplete', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onADComplete : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADComplete, self);
 	});
-	document.addEventListener('onADClick', function () {
+	document.addEventListener('onADClick', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onADClick : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClick, self);
 	});
-	document.addEventListener('onADClose', function () {
+	document.addEventListener('onADClose', function (evt) {
+        if (!!evt && !!console && !!console.log) {
+            var detail = evt.detail || {};
+            var ret = detail.result || detail.error;
+            console.log('Construct2 CordovaTGSDK onADClose : '+ret);
+        }
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClose, self);
 	});
 
