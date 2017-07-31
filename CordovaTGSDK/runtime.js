@@ -68,13 +68,11 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	AppID=this.properties[0];
 
 	if (typeof window['tgsdk'] == 'undefined') {return;} else {
-		window['tgsdk'].setDebugModel(debug);
-		window['tgsdk'].initialize(AppID);
+		window['tgsdk']['setDebugModel'](debug);
+		window['tgsdk']['initialize'](AppID);
 	}
 
 	// set events
-
-
     document.addEventListener('onPreloadSuccess', function () {
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadSuccess, self);
 	});
@@ -109,7 +107,7 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClose, self);
 	});
 
-	window['tgsdk'].preload();
+	window['tgsdk']['preload']();
 
 	};
 
@@ -200,21 +198,21 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	Acts.prototype.initialize = function ()
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].initialize(AppID);
+		  window['tgsdk']['initialize'](AppID);
 	  }
 	}
 
 	Acts.prototype.preload = function ()
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].preload();
+		  window['tgsdk']['preload']();
 		}
 	}
 
 	Acts.prototype.couldShowAd = function (SceneID)
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].couldShowAd(
+		  window['tgsdk']['couldShowAd'](
           SceneID,
           function(){
             self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onCouldShowTrue, self);
@@ -229,14 +227,14 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	Acts.prototype.showTestView = function (SceneID)
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].showTestView(SceneID);
+		  window['tgsdk']['showTestView'](SceneID);
 		}
 	}
 
 	Acts.prototype.showAd = function (SceneID)
 	{
 		if (typeof window['tgsdk'] == 'undefined') {return;}else{
-		  window['tgsdk'].showAd(SceneID);
+		  window['tgsdk']['showAd'](SceneID);
 		}
 	}
 
