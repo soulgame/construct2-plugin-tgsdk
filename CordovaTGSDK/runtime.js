@@ -75,49 +75,39 @@ cr.plugins_.CordovaTGSDK = function(runtime)
 	// set events
 
 
-	window['tgsdk'].onPreloadSuccess = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadSuccess, self);
-	};
-
-	window['tgsdk'].onPreloadFailed = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadFailed, self);
-	};
-
-	window['tgsdk'].onCPADLoaded = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onCPADLoaded, self);
-	};
-
-	window['tgsdk'].onVideoADLoaded = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onVideoADLoaded, self);
-	};
-
-	window['tgsdk'].onADAwardSuccess = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardSuccess, self);
-	};
-
-	window['tgsdk'].onADAwardFailed = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardFailed, self);
-	};
-
-	window['tgsdk'].onShowSuccess = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowSuccess, self);
-	};
-
-	window['tgsdk'].onShowFailed = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowFailed, self);
-	};
-
-	window['tgsdk'].onADComplete = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADComplete, self);
-	};
-
-	window['tgsdk'].onADClick = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClick, self);
-	};
-
-	window['tgsdk'].onADClose = function(ret) {
-	    self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClose, self);
-	};
+    document.addEventListener('onPreloadSuccess', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadSuccess, self);
+	});
+	document.addEventListener('onPreloadFailed', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onPreloadFailed, self);
+	});
+	document.addEventListener('onCPADLoaded', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onCPADLoaded, self);
+	});
+	document.addEventListener('onVideoADLoaded', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onVideoADLoaded, self);
+	});
+	document.addEventListener('onADAwardSuccess', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardSuccess, self);
+	});
+	document.addEventListener('onADAwardFailed', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADAwardFailed, self);
+	});
+	document.addEventListener('onShowSuccess', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowSuccess, self);
+	});
+	document.addEventListener('onShowFailed', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onShowFailed, self);
+	});
+	document.addEventListener('onADComplete', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADComplete, self);
+	});
+	document.addEventListener('onADClick', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClick, self);
+	});
+	document.addEventListener('onADClose', function () {
+		self.runtime.trigger(cr.plugins_.CordovaTGSDK.prototype.cnds.onADClose, self);
+	});
 
 	window['tgsdk'].preload();
 
